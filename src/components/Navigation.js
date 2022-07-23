@@ -1,11 +1,16 @@
 import React from 'react';
 import {Nav , Navbar, Container, Button, NavDropdown} from 'react-bootstrap'
-import {LinkContainer} from "react-router-bootstrap";
+import {LinkContainer} from "react-router-bootstrap"; 
+import logo from '../assets/speech-bubbles-logoa.jpg';
 function Navigation() {
   return (
     <Navbar bg="light" expand="lg"> 
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <LinkContainer to="/">
+        <Navbar.Brand>
+            <img src={logo} style={{width: 50, height: 50 }}alt="logo" />
+        </Navbar.Brand>
+        </LinkContainer>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
