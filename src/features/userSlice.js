@@ -1,12 +1,12 @@
 import {createSlice} from '@reduxjs/toolkit'
-import appApi from '../sevices/appApi'
+import appApi from '../services/appApi'
 
 export const userSlice = createSlice({
     name: 'user',
     initialState: null,
     reducers: {
-        addNotification: (state, {payload}) => {},
-        resetNotification: (state, {payload}) => {}
+        addNotifications: (state, {payload}) => {},
+        resetNotifications: (state, {payload}) => {}
     },
 
     extraReducers: (builder) => {
@@ -19,5 +19,5 @@ export const userSlice = createSlice({
     },
 });
 
-export const {addNotification, resetNotification} = userSlice.actions;
+export const { addNotifications, resetNotifications } = userSlice.actions;
 export default userSlice.reducer;
