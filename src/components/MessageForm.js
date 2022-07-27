@@ -5,7 +5,6 @@ import { AppContext } from '../context/appContext'
 import './MessageForm.css';
 
 
-
 function MessageForm() {
 const [ message, setMessage ] = useState('')
 const user = useSelector((state) => state.user);
@@ -46,8 +45,8 @@ function getFormattedDate(){
    })
 
  function handleSubmit(e){
+    e.preventDefault();
   if(!message) return
-   e.preventDefault();
    const today = new Date();
    const minutes = today.getMinutes() < 10 ? '0' + today.getMinutes() : today.getMinutes();
    const time = today.getHours() + ':' + minutes;
@@ -63,7 +62,7 @@ function getFormattedDate(){
     <>
     <div className='alert alert-info conversation-info'>
       <div>
-        Your conversation with {privateMemberMsg?.name} <img  src={ privateMemberMsg.picture } className='conversation-profile-picture' alt='privateMembermsg'/>
+        Your conversation with {privateMemberMsg.name} <img  src={ privateMemberMsg.picture } className='conversation-profile-picture' alt='privateMembermsg'/>
       </div>
     </div>
     </>
